@@ -1,0 +1,7 @@
+.home-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 670px;
+  background-image: url('https://stackblitz.com/files/react-xjumtw/github/palakurthiprashanth/prashanth-portfolio/master/src/assets/Home/bg.jpg');
+}
