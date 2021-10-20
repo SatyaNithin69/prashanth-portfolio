@@ -3,7 +3,7 @@ import './Footer.css';
 
 const Footer = () => {
   return (
-    <div className="footer-container">dsf
+    <div className="footer-container">
       <div className="footer-parent">
         <img
           src="https://cdn.jsdelivr.net/gh/palakurthiprashanth/prashanth-portfolio@master/src/assets/Home/shape-bg.png"
