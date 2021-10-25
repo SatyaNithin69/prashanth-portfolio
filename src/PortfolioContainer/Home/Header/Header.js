@@ -4,7 +4,6 @@ import {
   GET_SCREEN_INDEX,
 } from '../../../utilities/commonUtilities';
 
-
 import ScrollService from '../../../utilities/ScrollService';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -69,7 +68,7 @@ const Header = () => {
   return (
     <div>
       <div
-        className="header-option"
+        className="header-container"
         onClick={() => setShowHeaderOptions(!showHeaderOptions)}
       >
         <div className="header-parent">
@@ -86,7 +85,7 @@ const Header = () => {
             className={
               showHeaderOptions
                 ? 'header-options show-hamburger-options'
-                : 'hrader-options'
+                : 'h-options'
             }
           >
             {getHeaderOptions()}
