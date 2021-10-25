@@ -28,14 +28,13 @@ const Header = () => {
     ScrollService.currentScreenBroadcaster.subscribe(updateCurrentScreen);
 
   const getHeaderOptions = () => {
-    debugger;
     return TOTAL_SCREENS.map((screen, i) => (
       <div
         key={screen.screen_name}
         className={getHeaderOptionsClass(i)}
         onClick={() => switchScreen(i, screen)}
       >
-        <span>{screen.screen_name}</span>
+        <span className="header-option-seperator">{screen.screen_name}</span>
       </div>
     ));
   };
@@ -43,14 +42,14 @@ const Header = () => {
   const getHeaderOptionsClass = (index) => {
     let classes = 'header-option';
     if (index < TOTAL_SCREENS.length - 1) {
-      classes += 'header-option-seperator';
+      classes += ' header-option-seperator';
     }
 
     if (selectedScreen === index) {
-      classes += 'selected-header-option';
+      classes += ' selected-header-option';
     }
 
-    return;
+    return classes;
   };
 
   const switchScreen = (index, screen) => {

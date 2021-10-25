@@ -15,7 +15,7 @@ const ScreenHeading = (props) => {
         <div></div>
       )}
 
-      <div className="headin-seperator">
+      <div className="heading-seperator">
         <div className="seperator-line">
           <div className="seperator-blob">
             <div></div>
