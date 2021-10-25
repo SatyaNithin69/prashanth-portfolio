@@ -3,6 +3,14 @@ export {
   TOTAL_SCREENS,
   GET_SCREEN_INDEX,
 } from '../../../utilities/commonUtilities';
+import Home from '../Home/Home';
+
+const TOTAL_SCREENS = [
+  {
+    screen_name: 'Home',
+    component: "Home",
+  },
+];
 
 import ScrollService from '../../../utilities/ScrollService';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
@@ -28,6 +36,7 @@ const Header = () => {
     ScrollService.currentScreenBroadcaster.subscribe(updateCurrentScreen);
 
   const getHeaderOptions = () => {
+    debugger;
     return TOTAL_SCREENS.map((screen, i) => (
       <div
         key={screen.screen_name}
