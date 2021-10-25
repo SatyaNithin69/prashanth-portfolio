@@ -84,8 +84,7 @@ const Header = () => {
           <div
             className={
               showHeaderOptions
-                ? 'header-options show-hamburger-options'
-                : 'hea-options'
+                ? 'header-options show-hamburger-options': 'head-options'
             }
           >
             {getHeaderOptions()}
