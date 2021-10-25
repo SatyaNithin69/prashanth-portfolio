@@ -33,6 +33,48 @@ const Resume = (props) => {
     </div>
   );
 
+  const resumeBullets = [
+    { label: 'Education', logoSrc: 'education.svg' },
+    { label: 'Work History', logoSrc: 'work-history.svg' },
+    { label: 'Programming Skills', logoSrc: 'programming-skills.svg' },
+    { label: 'Projects', logoSrc: 'projects.svg' },
+    { label: 'Intrests', logoSrc: 'intrests.svg' },
+  ];
+
+  const programmingSkillDetails = [
+    { skill: 'Javascript', ratingPercentage: 85 },
+    { skill: 'React JS', ratingPercentage: 85 },
+    { skill: 'Express JS', ratingPercentage: 85 },
+    { skill: 'Node JS', ratingPercentage: 85 },
+    { skill: 'MongoDB', ratingPercentage: 85 },
+    { skill: 'HTML', ratingPercentage: 85 },
+    { skill: 'CSS', ratingPercentage: 85 },
+  ];
+
+  const projectDetails = [
+    {
+      title: 'Personal Portfolio Website',
+      duration: { fromDate: '2020', toDate: '2021' },
+      description:
+        'A Personal Portfolio website to showcase all my details and projects at one place.',
+      subHeading: 'Technologies Used: React JS, Bootsrap',
+    },
+    {
+      title: 'Mobile E-shop',
+      duration: { fromDate: '2020', toDate: '2021' },
+      description:
+        'An ecommerce application designed to sell products online wth payment system integration.',
+      subHeading: 'Technologies Used: React JS, Bootsrap',
+    },
+    {
+      title: 'Ecommerce Website',
+      duration: { fromDate: '2020', toDate: '2021' },
+      description:
+        'Online ecommerce website for showcasing and selling products onlne with payment system integration, both Paypal and Stripe.',
+      subHeading: 'Technologies Used: Mongo DB, Epress Js, React Js, Node JS, Redux, Bootstrap.',
+    },
+  ];
+
   let fadeInScreenHandler = (screen) => {
     if (screen.fadeScreen !== props.id) {
       return;
