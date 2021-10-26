@@ -141,7 +141,7 @@ const Resume = (props) => {
       className="resume-screen-container programming-skills-container"
       key="programming-skills"
     >
-      {programmingSkillDetails.map((skill, index) => {
+      {programmingSkillDetails.map((skill, index) => (
         <div className="skill-parent" key={index}>
           <div className="heading-bullet"></div>
           <span>{skill.skill}</span>
@@ -151,8 +151,8 @@ const Resume = (props) => {
               className="active-percentage"
             ></div>
           </div>
-        </div>;
-      })}
+        </div>
+      ))}
     </div>,
     <div className="resume-screen-containet" key="projects">
       {projectDetails.map((projectDetails, index) => (
