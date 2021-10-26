@@ -21,24 +21,22 @@ const Resume = (props) => {
   const ResumeHeading = (props) => (
     <div className="resume-heading">
       <div className="resume-main-heading">
-        <div className="heading-bullet">
-          <span>{props.heading ? props.heading : ''}</span>
-          {props.fromDate && props.toDate ? (
-            <div className="heading-date">
-              {props.fromDate + '_' + props.toDate}
-            </div>
-          ) : (
-            <div></div>
-          )}
-        </div>
+        <div className="heading-bullet"></div>
+        <span>{props.heading ? props.heading : ''}</span>
+        {props.fromDate && props.toDate ? (
+          <div className="heading-date">
+            {props.fromDate + '_' + props.toDate}
+          </div>
+        ) : (
+          <div></div>
+        )}
+      </div>
+      <div className="resume-sub-heading">
+        <span>{props.subHeading ? props.subHeading : ''}</span>
+      </div>
 
-        <div className="resume-sub-heading">
-          <span>{props.subHeading ? props.subHeading : ''}</span>
-        </div>
-
-        <div className="resume-heading-description">
-          <span>{props.description ? props.description : ''}</span>
-        </div>
+      <div className="resume-heading-description">
+        <span>{props.description ? props.description : ''}</span>
       </div>
     </div>
   );
@@ -121,6 +119,7 @@ const Resume = (props) => {
           Currently working as MERN stack web and mobile developer and also an
           online instructor on udemy.
         </span>
+        <br />
         <span className="resume-description-text">
           - Developed an ecommerce website for client with the dashboard for
           managing the products, managing reviews, users, payment etc. .
@@ -154,7 +153,7 @@ const Resume = (props) => {
         </div>
       ))}
     </div>,
-    <div className="resume-screen-containet" key="projects">
+    <div className="resume-screen-container" key="projects">
       {projectDetails.map((projectDetails, index) => (
         <ResumeHeading
           heading={projectDetails.title}
@@ -165,7 +164,7 @@ const Resume = (props) => {
         />
       ))}
     </div>,
-    <div className="resume-screen-containet" key="intrests">
+    <div className="resume-screen-container" key="intrests">
       <ResumeHeading
         heading="Teaching"
         subHeading="Apart from being a tech enthusiast and a code writer, i also love to teach people what i know simply because i believe in sharing."
@@ -203,11 +202,10 @@ const Resume = (props) => {
       >
         <img
           className="bullet-logo"
-          src={
-            'https://cdn.jsdelivr.net/gh/palakurthiprashanth/prashanth-portfolio@master/src/assets/Resume/education.svg'
-          }
+          src="https://cdn.jsdelivr.net/gh/palakurthiprashanth/prashanth-portfolio@master/src/assets/Resume/education.svg"
           alt="no internet"
         />
+        <span className="bullet-label">{bullet.label}</span>
       </div>
     ));
   };
@@ -230,9 +228,8 @@ const Resume = (props) => {
         <div className="resume-card">
           <div className="resume-bullets">
             <div className="bullet-container">
-              <div className="bullet-icons">
-                <div className="bullets"> {getBullets()}</div>
-              </div>
+              <div className="bullet-icons"></div>
+              <div className="bullets"> {getBullets()}</div>
             </div>
           </div>
           <div className="resume-bullet-details">{getResumeScreen()}</div>
