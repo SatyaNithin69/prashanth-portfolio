@@ -145,6 +145,6 @@ form {
   }
 
   form {
-    flex: 0;
+    flex: 0.;
   }
 }
