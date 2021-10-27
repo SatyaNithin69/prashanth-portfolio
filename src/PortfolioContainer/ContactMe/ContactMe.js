@@ -76,7 +76,7 @@ const ContactMe = (props) => {
             <label htmlFor="message">Message</label>
             <textarea type="text"
             onChange= {handleMessage}
-            value= {m}
+            value= {me}
              />
 
             <div className="sned-btn">
