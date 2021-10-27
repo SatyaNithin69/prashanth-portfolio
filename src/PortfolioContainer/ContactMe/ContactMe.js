@@ -74,10 +74,7 @@ const ContactMe = (props) => {
             <input type="email" onChange={handleEmail} value={email} />
 
             <label htmlFor="message">Message</label>
-            <textarea type="text"
-            onChange= {handleMessage}
-            value= {me}
-             />
+            <textarea type="text" onChange={handleMessage} value={message} />
 
             <div className="sned-btn">
               <button type="submit">
