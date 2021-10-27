@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import load from '../../images/load2.jpeg';
 import imgBack from '../../images/mailz.jpeg';
 import ScreenHeading from '../../utilities/ScreenHeading/ScreenHeading';
@@ -18,6 +18,21 @@ const ContactMe = (props) => {
   const fadeInSubscription =
     ScrollService.currentScreenFadeIn.subscribe(fadeInScreenHandler);
 
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+  const [banner, setBanner] = useState('');
+  const [bool, setBool] = useState(false);
+
+  const handleName = (e) => {
+    setName(e.target.value);
+  };
+  const handleEmail = (e) => {
+    setName(e.target.value);
+  };
+  const handleMessage = (e) => {
+    setName(e.target.value);
+  };
   return (
     <div className="main-container" id={props.id || ''}>
       <ScreenHeading title={'Contact Me'} subHeading={'Lets Keep In Touch.'} />
@@ -41,6 +56,35 @@ const ContactMe = (props) => {
           <a href="#">
             <i className="fa fa-twitter"></i>
           </a>
+        </div>
+        <div className="back-form">
+          <div className="img-back">
+            <h4>Send Your Email Here !!</h4>
+            <img
+              src="https://cdn.jsdelivr.net/gh/palakurthiprashanth/prashanth-portfolio@master/src/images/mailz.jpeg"
+              alt="not found"
+            />
+          </div>
+          <form>
+            <p>{banner}</p>
+            <label htmlFor="name">Name</label>
+            <input type="text" onChange={handleName} value={name} />
+
+            <label htmlFor="email">Email</label>
+            <input type="email" onChange={handleEmail} value={email} />
+
+            <label htmlFor="message">Message</label>
+            <textarea type="text"
+            onChange= {handleMessage}
+            value= {m}
+             />
+
+            <div className="sned-btn">
+              <button type="submit">
+                Send <i className="fa fa-paper-plane"></i>
+              </button>
+            </div>
+          </form>
         </div>
       </div>
     </div>
