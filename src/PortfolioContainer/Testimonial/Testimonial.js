@@ -39,7 +39,7 @@ const Testimonial = (props) => {
                       <i className="fa fa-quote-right" />
                     </p>
                     <ul>
-                      <li></li
+                      <li></li>
                     </ul>
                   </div>
                 </div>
