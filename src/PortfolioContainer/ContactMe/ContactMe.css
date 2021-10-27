@@ -136,6 +136,7 @@ form {
     display: flex;
     justify-content: space-between;
     margin-top: 30px;
+    flex-direction: column;
   }
 
   .img-back {
@@ -145,5 +146,8 @@ form {
   }
   form {
     flex: 0.9;
+  }
+  .central-form form {
+    margin-top: 0;
   }
 }

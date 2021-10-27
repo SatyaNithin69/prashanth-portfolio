@@ -5,6 +5,8 @@ import ScreenHeading from '../../utilities/ScreenHeading/ScreenHeading';
 import ScrollService from '../../utilities/ScrollService';
 import Animations from '../../utilities/Animations';
 import Typical from 'react-typical';
+import axios from 'axios';
+import { toast } from 'toastify';
 import './ContactMe.css';
 
 const ContactMe = (props) => {
@@ -28,10 +30,33 @@ const ContactMe = (props) => {
     setName(e.target.value);
   };
   const handleEmail = (e) => {
-    setName(e.target.value);
+    setEmail(e.target.value);
   };
   const handleMessage = (e) => {
-    setName(e.target.value);
+    setMessage(e.target.value);
+  };
+  const submitForm = async (e) => {
+    e.preventDefault();
+    try {
+      let data = {
+        name,
+        email,
+        message,
+      };
+      setBool(true);
+      const res = await axios.post('/contact', data);
+      if (name.length === 0 || email.length === 0 || message.length === 0) {
+        setBanner(res.data.msg);
+        toast.error(res.data.msg);
+        setBool(false);
+      } else if (res.status === 200) {
+        setBanner(res.data.msg);
+        toast.success(res.data.msg);
+        setBool(false);
+      }
+    } catch (e) {
+      console.log(e);
+    }
   };
   return (
     <div className="main-container" id={props.id || ''}>
@@ -65,7 +90,7 @@ const ContactMe = (props) => {
               alt="not found"
             />
           </div>
-          <form>
+          <form onSubmit={submitForm}>
             <p>{banner}</p>
             <label htmlFor="name">Name</label>
             <input type="text" onChange={handleName} value={name} />
