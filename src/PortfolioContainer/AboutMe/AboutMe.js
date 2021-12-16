@@ -1,20 +1,8 @@
 import React, { useEffect } from 'react';
 import ScreenHeading from '../../utilities/ScreenHeading/ScreenHeading';
-import ScrollService from '../../utilities/ScrollService';
-import Animations from '../../utilities/Animations';
 import './AboutMe.css';
 
 const AboutMe = (props) => {
-  let fadeInScreenHandler = (screen) => {
-    if (screen.fadeInScreen !== props.id) {
-      return;
-    }
-    Animations.animations.fadeInScreen(props.id);
-  };
-
-  const fadeInSubscription =
-    ScrollService.currentScreenFadeIn.subscribe(fadeInScreenHandler);
-
   const SCREEN_CONSTANTS = {
     description:
       'Full stack web and mobile developer with background knowledge of MERN stacks with redux, along with a knack of building applications with utmost efficiency. Strong professional with a BSC willing to be an asset for an organization.',
